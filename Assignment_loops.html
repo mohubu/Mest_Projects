@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student</th>
+                <th>Query</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+           
+        </tbody>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const queries = [
+        { id: 1, student: "Genesis", query: "Permission to absent from tech class", status: "APPROVED" },
+        { id: 2, student: "Nunya", query: "Permission to Absa Hackathon", status: "APPROVED" },
+        { id: 3, student: "Fleeur", query: "Permission to shoot film", status: "DECLINED" },
+        { id: 4, student: "Delight", query: "Need some delightful time to cool off", status: "DECLINED" },
+        { id: 5, student: "Sila", query: "Permission to participate in Absa Hackathon", status: "PENDING" }
+    ];
+
+    // Using a while loop
+    let i = 0;
+    const tableBody = document.getElementById("table-body");
+    while (i < queries.length) {
+        const row = document.createElement("tr");
+        const query = queries[i];
+        row.innerHTML = `
+            <td>${query.id}</td>
+            <td>${query.student}</td>
+            <td>${query.query}</td>
+            <td>${query.status}</td>
+        `;
+        tableBody.appendChild(row);
+        i++;
+    }
+
+    // Using a do-while loop
+    let j = 0;
+    const tableBody2 = document.getElementById("table-body");
+    do {
+        const row = document.createElement("tr");
+        const query = queries[j];
+        row.innerHTML = `
+            <td>${query.id}</td>
+            <td>${query.student}</td>
+            <td>${query.query}</td>
+            <td>${query.status}</td>
+        `;
+        tableBody2.appendChild(row);
+        j++;
+    } while (j < queries.length);
+</script>
+</html>
